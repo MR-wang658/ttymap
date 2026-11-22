@@ -7,4 +7,5 @@ dist/
 venv/
 .pytest_cache/
 .ruff_cache/
-ttymap.toml
+/ttymap.toml
+!examples/ttymap.toml

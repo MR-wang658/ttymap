@@ -1,0 +1,37 @@
+# Example config. Copy to ttymap.toml and edit.
+#
+# Two ways to identify a device:
+#   match = "usb"   bind to the device itself (vid + pid + serial). Survives being
+#                   plugged into a different port. Needs a unique USB serial number.
+#   match = "port"  bind to a physical port (KERNELS). Use this when the device has
+#                   no serial number — cheap CH340/PL2303 clones usually don't.
+#
+# `kernels` is the USB interface id, e.g. 1-2.2:1.0.
+# It is NOT the fragment you see in /dev/serial/by-path ("...-usb-0:2.2:1.0-port0").
+# Copying that fragment into a rule produces a rule that silently never matches.
+
+[aliases.ttyArm]
+match   = "port"
+kernels = "1-2.2:1.0"
+mode    = "0666"
+# CH340 with no iSerialNumber: the only thing that distinguishes it is the port.
+
+[aliases.ttyChassis]
+match  = "usb"
+vid    = "10c4"
+pid    = "ea60"
+serial = "0001"
+mode   = "0666"
+
+[aliases.ttyLidar]
+match  = "usb"
+vid    = "0403"
+pid    = "6001"
+serial = "A10KZ9PQ"
+
+[aliases.ttyAux]
+match  = "usb"
+vid    = "2341"
+pid    = "0043"
+serial = "85434233353751F0E1E1"
+group  = "dialout"

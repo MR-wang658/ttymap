@@ -2,7 +2,7 @@
 
 **Stable, readable names for USB serial devices on Linux.**
 
-![ci](https://github.com/OWNER/ttymap/actions/workflows/ci.yml/badge.svg)
+![ci](https://github.com/MR-wang658/ttymap/actions/workflows/ci.yml/badge.svg)
 ![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
@@ -34,7 +34,7 @@ No dependencies. No root needed to inspect anything. Python 3.10+.
 ## Install
 
 ```bash
-git clone https://github.com/OWNER/ttymap && cd ttymap
+git clone https://github.com/MR-wang658/ttymap && cd ttymap
 pipx install .          # or: pip install --user .
 ```
 

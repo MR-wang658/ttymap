@@ -61,7 +61,7 @@ def cmd_scan(args) -> int:
             ],
             indent=2,
         ))
-        return OK
+        return OK if devices else FAIL
     if not devices:
         print("No USB serial devices found.")
         print("  Check: ls -l /dev/serial/by-id/ /dev/ttyUSB*")

@@ -44,6 +44,27 @@ Working from a checkout instead:
 PYTHONPATH=src python3 -m ttymap scan
 ```
 
+## Demo
+
+No serial hardware required — `--demo` builds a synthetic `/sys` + `/dev` tree in a temp
+directory and runs the whole flow against it:
+
+```bash
+ttymap scan --demo
+ttymap plan --demo -c examples/ttymap.toml
+ttymap doctor --demo -c examples/ttymap.toml
+```
+
+<!-- recording goes here: docs/demo.mp4 (under 5 MB plays inline on GitHub) -->
+<!-- ![demo](docs/demo.mp4) -->
+
+To record it: GNOME on Wayland has a built-in recorder (`Ctrl+Alt+Shift+R`, saves webm to
+`~/Videos`); on X11 use `peek`. Convert either to mp4 before committing:
+
+```bash
+ffmpeg -i input.webm -vf "fps=15,scale=1280:-1" -pix_fmt yuv420p docs/demo.mp4
+```
+
 ## Quickstart
 
 ```bash
